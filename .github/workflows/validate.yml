@@ -13,5 +13,6 @@ jobs:
     steps:
       - name: Checkout sources
         uses: actions/checkout@v4
-
+      - run: cat requirements.txt
       - uses: priya-kinthali/srcomp-validate-action@test-action-361
+      - run: cat requirements.txt
