@@ -1,16 +1,18 @@
 name: Validate
 
 on:
-  push:
-    branches:
-      - main
+  # push:
+  #   branches:
+  #     - test-361
   pull_request:
+  workflow_dispatch:
+    
 
 jobs:
   validate:
     runs-on: ubuntu-latest
     steps:
       - name: Checkout sources
-        uses: actions/checkout@v3
+        uses: actions/checkout@v4
 
-      - uses: PeterJCLaw/srcomp-validate-action@v0.2
+      - uses: priya-kinthali/srcomp-validate-action@test-action-361
