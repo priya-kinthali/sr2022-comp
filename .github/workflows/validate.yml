@@ -1,9 +1,9 @@
 name: Validate
 
 on:
-  # push:
-  #   branches:
-  #     - test-361
+  push:
+    branches:
+      - test-361
   pull_request:
   workflow_dispatch:
     
