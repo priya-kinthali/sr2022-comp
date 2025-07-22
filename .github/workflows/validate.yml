@@ -4,13 +4,14 @@ on:
   push:
     branches:
       - test-361
-#pull-request
   workflow_dispatch:
     
 
 jobs:
   validate:
     runs-on: ubuntu-latest
+    container:
+      image: ubuntu:24.04
     steps:
       - name: Checkout sources
         uses: actions/checkout@v4
