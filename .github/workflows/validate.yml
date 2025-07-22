@@ -16,6 +16,15 @@ jobs:
       - name: Checkout sources
         uses: actions/checkout@v4
       - run: cat requirements.txt
+      - name: Ensure Sudo is Installed
+        run: |
+          if ! command -v sudo &> /dev/null; then
+            echo "sudo could not be found. Installing..."
+            apt-get update && apt-get install -y sudo
+          fi
+      - name: Clear Python cache
+        run: |
+          sudo rm -rf /__t/Python
       - name: Install lsb-release
         run: |
           apt-get update
